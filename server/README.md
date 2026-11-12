@@ -49,7 +49,7 @@ in `../.env.development.local` and `localStorage.varsys_session_token = "local-o
    `TENANT_ID=vasanthan-portfolio`, `APP_SLUG=portfolio`,
    `CORS_ORIGINS=https://vasanthan.tech,https://www.vasanthan.tech`, `S3_*`.
    Then set repo variable `COOLIFY_API_UUID` and secret `COOLIFY_TOKEN` for CI deploys.
-5. **Edge**: DNS `portfolio-api.varsys.co.in` (Hostinger) and an NPM proxy host
+5. **Edge**: DNS `portfolio-api.varsys.co.in` (Cloudflare) and an NPM proxy host
    with a Let's Encrypt certificate (NPM is the edge proxy, not Traefik).
 6. **Auth service**: add `https://vasanthan.tech` to its `CORS_ORIGINS` so the
    admin sign-in works from the site.

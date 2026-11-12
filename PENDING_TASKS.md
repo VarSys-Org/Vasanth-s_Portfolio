@@ -80,7 +80,7 @@ Not done: everything below needs production access.
 
 ### 5. Edge
 
-- [ ] Hostinger DNS (`hostinger-api` MCP, DNS only): `portfolio-api.varsys.co.in`
+- [ ] Cloudflare DNS (`cf` CLI, DNS only; see `docs/reference/cloudflare-dns.md` in the workspace root): `portfolio-api.varsys.co.in`
       A record to `160.250.204.210`.
 - [ ] NPM proxy host for `portfolio-api.varsys.co.in` to the container's network
       alias, port 3020, with a Let's Encrypt certificate (NPM is the edge proxy,
