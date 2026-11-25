@@ -79,13 +79,14 @@ export function makeParticleModel(count, fromStage, toStage, paused) {
   };
   const json=new TextEncoder().encode(JSON.stringify(gltf));
   const jsonLength=(json.length+3)&~3;
-  const total=12+8+jsonLength+8+byteLength;
+  const binaryLength=(byteLength+3)&~3;
+  const total=12+8+jsonLength+8+binaryLength;
   const buffer=new ArrayBuffer(total),data=new DataView(buffer),bytes=new Uint8Array(buffer);
   data.setUint32(0,0x46546c67,true);data.setUint32(4,2,true);data.setUint32(8,total,true);
   data.setUint32(12,jsonLength,true);data.setUint32(16,0x4e4f534a,true);
   bytes.fill(32,20,20+jsonLength);bytes.set(json,20);
   const binHeader=20+jsonLength;
-  data.setUint32(binHeader,byteLength,true);data.setUint32(binHeader+4,0x004e4942,true);
+  data.setUint32(binHeader,binaryLength,true);data.setUint32(binHeader+4,0x004e4942,true);
   let offset=binHeader+8;for(const chunk of chunks){bytes.set(chunk,offset);offset+=chunk.length;}
   return buffer;
 }
