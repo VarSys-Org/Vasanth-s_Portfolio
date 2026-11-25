@@ -1,25 +1,23 @@
-# Welcome to your Lovable project
+# Vasanthan E Portfolio
 <!-- Trigger deployment - Profile photos and Google Maps integration fixed -->
 
 ## Project info
 
 **URL**: https://lovable.dev/projects/142bad73-27d0-430f-a586-724ba43b720a
 
-## How can I edit this code?
-
-There are several ways of editing your application.
+## Edit the project
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/142bad73-27d0-430f-a586-724ba43b720a) and start prompting.
+Open the [Lovable project](https://lovable.dev/projects/142bad73-27d0-430f-a586-724ba43b720a) and prompt it to edit the app.
 
-Changes made via Lovable will be committed automatically to this repo.
+Lovable commits these changes to this repository automatically.
 
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you work locally, clone this repo and push changes from your IDE. They will appear in Lovable.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+The only requirement is to have Node.js and npm installed. [Install Node.js with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 Follow these steps:
 
@@ -51,9 +49,7 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## What technologies are used for this project?
-
-This project is built with:
+## Technologies
 
 - Vite
 - TypeScript
@@ -61,14 +57,12 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Deploy the site
 
-Simply open [Lovable](https://lovable.dev/projects/142bad73-27d0-430f-a586-724ba43b720a) and click on Share -> Publish.
+In [Lovable](https://lovable.dev/projects/142bad73-27d0-430f-a586-724ba43b720a), select Share > Publish.
 
-## Can I connect a custom domain to my Lovable project?
+## Connect a custom domain
 
-Yes, you can!
+In Lovable, open Project > Settings > Domains and select Connect Domain.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+[Set up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide).
