@@ -1,6 +1,7 @@
 import { useState, type KeyboardEvent } from "react";
 import { ArrowDown, ArrowUp, Plus, Trash2, X } from "lucide-react";
 import type { Field } from "@shared/portfolio";
+import { handleWordListKey } from "./fieldInputKeys";
 
 type Data = Record<string, unknown>;
 
@@ -35,14 +36,10 @@ function WordList({ value, onChange, id, options }: { value: string[]; onChange:
     if (clean && !value.includes(clean)) onChange([...value, clean]);
     setDraft("");
   };
-  const onKey = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" || e.key === ",") {
-      e.preventDefault();
-      add(draft);
-    } else if (e.key === "Backspace" && !draft && value.length) {
-      onChange(value.slice(0, -1));
-    }
-  };
+  const onKey = (e: KeyboardEvent<HTMLInputElement>) =>
+    handleWordListKey(e.nativeEvent, draft, add, () => {
+      if (value.length) onChange(value.slice(0, -1));
+    });
   const left = options?.filter((o) => !value.includes(o.value)) ?? [];
 
   return (

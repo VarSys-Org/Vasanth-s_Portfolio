@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
 
     <!-- Primary SEO Meta Tags -->
     <title>Vasanthan E - Full Stack Developer, VarSys Founder & Content Creator | Pondicherry</title>
@@ -37,6 +38,7 @@
           t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
         }
         document.documentElement.dataset.theme = t;
+        document.querySelector('meta[name="color-scheme"]')?.setAttribute("content", t);
       })();
     </script>
 

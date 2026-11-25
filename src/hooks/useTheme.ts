@@ -19,14 +19,19 @@ function readTheme(): Theme {
   return set === "light" ? "light" : "dark";
 }
 
+export function applyDocumentTheme(theme: Theme) {
+  document.documentElement.dataset.theme = theme;
+  document.querySelector('meta[name="color-scheme"]')?.setAttribute("content", theme);
+}
+
 export function startTheme() {
   const saved = readSaved();
   const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-  document.documentElement.dataset.theme = saved ?? (prefersLight ? "light" : "dark");
+  applyDocumentTheme(saved ?? (prefersLight ? "light" : "dark"));
 }
 
 export function setTheme(next: Theme) {
-  document.documentElement.dataset.theme = next;
+  applyDocumentTheme(next);
   try {
     window.localStorage.setItem(KEY, next);
   } catch {

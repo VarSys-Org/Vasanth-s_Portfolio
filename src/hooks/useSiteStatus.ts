@@ -7,16 +7,13 @@ const waiting = new Map<string, Promise<SiteStatus>>();
 
 // A no-cors request cannot read the response, but it only resolves when the
 // server answered, which is enough to tell a visitor the site is up.
-function pingSite(url: string): Promise<SiteStatus> {
+export function pingSite(url: string): Promise<SiteStatus> {
   const known = waiting.get(url);
   if (known) return known;
-  const stop = new AbortController();
-  const timer = window.setTimeout(() => stop.abort(), 9000);
-  const job = fetch(url, { mode: "no-cors", cache: "no-store", signal: stop.signal })
+  const job = fetch(url, { mode: "no-cors", cache: "no-store", signal: AbortSignal.timeout(9000) })
     .then(() => "online" as const)
     .catch(() => "offline" as const)
     .then((status) => {
-      window.clearTimeout(timer);
       cache.set(url, status);
       return status;
     });
